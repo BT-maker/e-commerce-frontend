@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Yönetimi - Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h1>Admin Panel</h1>
+            </div>
+            <ul class="admin-menu">
+                <li>
+                    <a href="/admin">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/products" class="active">
+                        <i class="fas fa-box"></i>
+                        Ürünler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        Siparişler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/users">
+                        <i class="fas fa-users"></i>
+                        Kullanıcılar
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/categories">
+                        <i class="fas fa-tags"></i>
+                        Kategoriler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/settings">
+                        <i class="fas fa-cog"></i>
+                        Ayarlar
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h2>Ürün Yönetimi</h2>
+                <button class="admin-btn admin-btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Yeni Ürün Ekle
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="admin-form" style="margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select class="form-control" id="category">
+                            <option value="">Tüm Kategoriler</option>
+                            <option value="electronics">Elektronik</option>
+                            <option value="fashion">Moda</option>
+                            <option value="home">Ev</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Durum</label>
+                        <select class="form-control" id="status">
+                            <option value="">Tümü</option>
+                            <option value="active">Aktif</option>
+                            <option value="inactive">Pasif</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="search">Arama</label>
+                        <input type="text" class="form-control" id="search" placeholder="Ürün ara...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <div class="admin-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ürün</th>
+                            <th>Kategori</th>
+                            <th>Fiyat</th>
+                            <th>Stok</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <img src="/images/products/product1.jpg" alt="Ürün" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                    <div>
+                                        <div style="font-weight: 500;">iPhone 13 Pro</div>
+                                        <div style="font-size: 0.875rem; color: var(--admin-text-light);">SKU: IP13P-256</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Elektronik</td>
+                            <td>₺32,999</td>
+                            <td>45</td>
+                            <td><span class="status-badge status-active">Aktif</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="admin-btn admin-btn-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="admin-btn admin-btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#2</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <img src="/images/products/product2.jpg" alt="Ürün" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                    <div>
+                                        <div style="font-weight: 500;">Samsung Galaxy S21</div>
+                                        <div style="font-size: 0.875rem; color: var(--admin-text-light);">SKU: SGS21-128</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Elektronik</td>
+                            <td>₺24,999</td>
+                            <td>32</td>
+                            <td><span class="status-badge status-active">Aktif</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="admin-btn admin-btn-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="admin-btn admin-btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#3</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <img src="/images/products/product3.jpg" alt="Ürün" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                    <div>
+                                        <div style="font-weight: 500;">MacBook Pro M1</div>
+                                        <div style="font-size: 0.875rem; color: var(--admin-text-light);">SKU: MBP-M1-512</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Elektronik</td>
+                            <td>₺42,999</td>
+                            <td>15</td>
+                            <td><span class="status-badge status-inactive">Pasif</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="admin-btn admin-btn-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="admin-btn admin-btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; margin-top: 2rem; gap: 0.5rem;">
+                <button class="admin-btn">Önceki</button>
+                <button class="admin-btn admin-btn-primary">1</button>
+                <button class="admin-btn">2</button>
+                <button class="admin-btn">3</button>
+                <button class="admin-btn">Sonraki</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.querySelector('.admin-menu').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.admin-sidebar');
+                sidebar.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+</html> 

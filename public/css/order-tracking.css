@@ -1,0 +1,94 @@
+/* Order Tracking Page Styles */
+.order-tracking-container {
+    padding: 2rem 5%;
+    background-color: var(--ivory);
+    min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+}
+
+.order-tracking-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.order-tracking-content h1 {
+    color: var(--navy-blue);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.tracking-form p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.tracking-form form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.tracking-form input[type="text"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.tracking-form .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: gray;
+    color: var(--ivory);
+}
+
+.tracking-results,
+.error-message {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.tracking-results {
+    background-color: #e9f7ef; /* Light green for success */
+    border: 1px solid #d0e9c6;
+    color: #3c763d;
+}
+
+.tracking-results h2 {
+    margin-top: 0;
+    color: #3c763d;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tracking-results p {
+    margin-bottom: 0.5rem;
+}
+
+.error-message {
+    background-color: #f2dede; /* Light red for error */
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .tracking-form form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tracking-form input[type="text"] {
+        width: 100%;
+        max-width: none;
+    }
+
+    .tracking-form .cta-button {
+        width: 100%;
+    }
+} 

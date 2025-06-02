@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('partials/header') %> <%- include('partials/category-menu') %>
+    <!-- Hero Section -->
+    <section class="hero-slider">
+      <div class="slider-container">
+        <div class="slide active">
+          <div class="hero-content">
+            <h1>Yeni Sezon Koleksiyonu</h1>
+            <p>En trend ürünler şimdi satışta</p>
+            <a href="/new-arrivals" class="cta-button">Hemen Keşfet</a>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="hero-content">
+            <h1>Özel İndirimler</h1>
+            <p>Seçili ürünlerde %30'a varan indirimler</p>
+            <a href="/sale" class="cta-button">İndirimleri Gör</a>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="hero-content">
+            <h1>Yeni Gelenler</h1>
+            <p>En yeni ürünlerimizi keşfedin</p>
+            <a href="/products" class="cta-button">Ürünleri İncele</a>
+          </div>
+        </div>
+        <div class="slider-nav">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Öne Çıkan Ürünler</h2>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+          <% for(let i = 0; i < 8; i++) { %>
+          <div class="col">
+            <a href="/product/<%= i+1 %>" class="text-decoration-none">
+              <div class="card h-100 product-card">
+                <div class="card-img-wrapper">
+                  <img src="/images/product2.jpg" class="card-img-top" alt="Ürün <%= i+1 %>">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Ürün Adı <%= i+1 %></h5>
+                  <p class="card-text price mb-3">₺1,299.99</p>
+                  <form action="/" method="POST" class="mt-auto">
+                    <input type="hidden" name="productId" value="<%= i+1 %>">
+                    <button type="submit" class="btn btn-dark add-to-cart w-100">Sepete Ekle</button>
+                  </form>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <!-- Special Offers -->
+    <section class="special-offers">
+      <div class="offer-content">
+        <h2>Özel Teklifler</h2>
+        <p>Seçili ürünlerde %30'a varan indirimler</p>
+        <a href="/sale" class="cta-button cta-button-green"
+          >Fırsatları Keşfet</a
+        >
+      </div>
+    </section>
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Yeniliklerden Haberdar Olun</h2>
+        <p>En yeni ürünler ve özel teklifler için bültenimize abone olun</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="E-posta adresiniz" />
+          <button type="submit">Abone Ol</button>
+        </form>
+      </div>
+    </section>
+    <%- include('partials/footer') %>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

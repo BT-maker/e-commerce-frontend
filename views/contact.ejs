@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - ALTUBO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <section class="contact" style="padding:4rem 5%;max-width:700px;margin:0 auto;">
+        <h2>İletişim</h2>
+        <form style="display:flex;flex-direction:column;gap:1.5rem;">
+            <input type="text" placeholder="Adınız Soyadınız" required style="padding:1rem;border-radius:5px;border:1px solid var(--anthracite);">
+            <input type="email" placeholder="E-posta Adresiniz" required style="padding:1rem;border-radius:5px;border:1px solid var(--anthracite);">
+            <textarea placeholder="Mesajınız" rows="5" required style="padding:1rem;border-radius:5px;border:1px solid var(--anthracite);"></textarea>
+            <button type="submit" class="cta-button" style="max-width:200px;align-self:flex-end;">Gönder</button>
+        </form>
+        <div style="margin-top:2.5rem;color:var(--anthracite);">
+            <p><i class="fas fa-envelope"></i> info@Shopping.com</p>
+            <p><i class="fas fa-phone"></i> +90 555 555 55 55</p>
+        </div>
+    </section>
+    <%- include('partials/footer') %>
+    <script src="/js/script.js"></script>
+
+</body>
+</html> 

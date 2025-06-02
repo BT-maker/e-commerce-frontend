@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuponlarım - Shopping</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom Global CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="/css/user/coupons.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+
+    <div class="user-page-container coupons-container">
+        <h2 class="user-page-title">Kuponlarım</h2>
+        
+        <div class="coupon-input-bar">
+             <div class="form-group coupon-form-group">
+                <label for="couponCode" class="form-label">Kupon Kodu Girin</label>
+                <input type="text" class="form-control" id="couponCode" placeholder="Kupon kodunu buraya girin">
+            </div>
+            <button class="btn btn-primary user-btn apply-coupon-btn">Kuponu Uygula</button>
+        </div>
+
+        <div class="coupon-list">
+            <!-- Kuponlar buraya gelecek -->
+            <div class="user-card coupon-card">
+                <div class="card-body">
+                    <h5 class="coupon-title">%10 İndirim Kuponu</h5>
+                    <p class="coupon-code">Kod: SALE10</p>
+                    <p class="coupon-expiry">Son Kullanma Tarihi: 31.12.2024</p>
+                    <p class="coupon-details">Minimum 100 TL alışverişte geçerlidir.</p>
+                    <button class="btn btn-info btn-sm use-coupon">Kuponu Kullan</button>
+                </div>
+            </div>
+             <div class="user-card coupon-card">
+                <div class="card-body">
+                    <h5 class="coupon-title">Ücretsiz Kargo Kuponu</h5>
+                    <p class="coupon-code">Kod: FREESHIP</p>
+                    <p class="coupon-expiry">Son Kullanma Tarihi: 31.12.2024</p>
+                    <p class="coupon-details">Tüm alışverişlerde geçerlidir.</p>
+                    <button class="btn btn-info btn-sm use-coupon">Kuponu Kullan</button>
+                </div>
+            </div>
+            
+            <!-- Eğer kupon yoksa aşağıdaki satır gösterilir -->
+            <!--
+            <div class="empty-coupons">
+                <p>Henüz kuponunuz bulunmamaktadır.</p>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

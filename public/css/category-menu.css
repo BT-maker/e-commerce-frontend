@@ -1,0 +1,266 @@
+/* Category Menu Base Styles */
+.category-menu {
+    background: var(--bg-lux);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+    position: relative;
+}
+
+.category-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.category-menu ul li {
+    position: relative;
+}
+
+/* Main Category Links */
+.category-menu > ul > li > a {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+    white-space: nowrap;
+}
+
+.category-menu > ul > li > a:hover {
+    color: var(--gold);
+    background-color: rgba(139, 94, 60, 0.1);
+}
+
+/* Submenu Styles - Hidden by default */
+.submenu {
+    display: none !important; /* !important ekleyerek kesinlik sağlıyoruz */
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: var(--bg-lux); /* Düzeltme: ► karakteri kaldırıldı */
+    min-width: 220px;
+    border-radius: 0 0 8px 8px; /* Düzeltme: ► karakteri kaldırıldı */
+    padding: 0.5rem 0; /* Düzeltme: tire yerine boşluk ve ► kaldırıldı */
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Düzeltme: ○ ve ▼ kaldırıldı */
+    border: 1px solid var(--border-color); /* Düzeltme: lpx_solid düzeltildi ve ▼ kaldırıldı */
+    border-top: none; /* Düzeltme: ► kaldırıldı */
+}
+
+/* Hover ve active durumları için özgüllük artırıyoruz */
+.category-menu > ul > li.has-submenu:hover > .submenu,
+.category-menu > ul > li.has-submenu.active > .submenu {
+    display: block !important;
+}
+
+.submenu li a {
+    color: var(--text-color);
+    padding: 0.6rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    font-family: "Montserrat", sans-serif;
+}
+
+.submenu li a:hover {
+    color: var(--gold);
+    background-color: rgba(139, 94, 60, 0.05);
+}
+
+/* Mobile Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    justify-content: space-between;
+    align-items: center;
+}
+/* 1024px tablet görünümü için optimize */
+@media (max-width: 1024px) and (min-width: 901px) {
+    .category-menu ul {
+        gap: 0.8rem; /* Ara boşlukları azalttık (2.5rem'den) */
+        padding: 0.5rem 1rem; /* Yan padding ekledik */
+        flex-wrap: wrap; /* Taşanları alt satıra alsın */
+        justify-content: center; /* Ortalı olsun */
+    }
+    
+    .category-menu > ul > li > a {
+        font-size: 0.85rem; /* Yazı boyutunu küçülttük */
+        padding: 0.4rem 0.7rem; /* İç boşlukları azalttık */
+        white-space: nowrap; /* Yazıların tek satırda kalması */
+    }
+    
+    .submenu {
+        min-width: 180px; /* Alt menü genişliğini küçülttük */
+    }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .category-menu > ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+    
+    .category-menu > ul.active {
+        display: flex;
+    }
+    
+    .category-menu > ul > li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .category-menu > ul > li > a {
+        padding: 0.8rem 1.5rem;
+        border-radius: 0;
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .submenu li a {
+        padding-left: 2.5rem;
+    }
+    
+    /* Add toggle button for submenus in mobile */
+    .submenu-toggle {
+        position: absolute;
+        right: 1rem;
+        top: 0.8rem;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .has-submenu.active > .submenu {
+        display: block;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    .category-menu {
+        position: relative;
+        padding: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    
+    .category-menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .category-menu ul.active {
+        display: flex;
+    }
+    
+    .category-menu > ul > li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .category-menu > ul > li > a {
+        padding: 0.8rem 1.5rem;
+        border-radius: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .submenu li a {
+        padding-left: 2.5rem;
+    }
+    
+    .submenu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .submenu-toggle i {
+        transition: transform 0.3s ease;
+    }
+    
+    .has-submenu.active > .submenu-toggle i {
+        transform: rotate(180deg);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+    .category-menu > ul > li > a {
+        padding: 0.7rem 1.5rem;
+    }
+    
+    .submenu li a {
+        padding-left: 2rem;
+    }
+}
+
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Shopping</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h1>Admin Panel</h1>
+            </div>
+            <ul class="admin-menu">
+                <li>
+                    <a href="/admin" class="active">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/products">
+                        <i class="fas fa-box"></i>
+                        Ürünler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        Siparişler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/users">
+                        <i class="fas fa-users"></i>
+                        Kullanıcılar
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/categories">
+                        <i class="fas fa-tags"></i>
+                        Kategoriler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/settings">
+                        <i class="fas fa-cog"></i>
+                        Ayarlar
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h2>Dashboard</h2>
+                <div class="admin-user">
+                    <img src="/images/mascot2.png" alt="Admin">
+                    <span>Admin</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <h3>Toplam Satış</h3>
+                    <div class="value">₺24,500</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12% artış</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Toplam Sipariş</h3>
+                    <div class="value">156</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8% artış</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Toplam Kullanıcı</h3>
+                    <div class="value">1,234</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>5% artış</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Bekleyen Siparişler</h3>
+                    <div class="value">23</div>
+                    <div class="trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>3% azalış</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="admin-table">
+                <h3>Son Siparişler</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sipariş No</th>
+                            <th>Müşteri</th>
+                            <th>Tutar</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>Ahmet Yılmaz</td>
+                            <td>₺1,250</td>
+                            <td><span class="status-badge status-active">Tamamlandı</span></td>
+                            <td>2024-03-15</td>
+                            <td>
+                                <button class="admin-btn admin-btn-primary">Detay</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12344</td>
+                            <td>Ayşe Demir</td>
+                            <td>₺850</td>
+                            <td><span class="status-badge status-pending">Beklemede</span></td>
+                            <td>2024-03-15</td>
+                            <td>
+                                <button class="admin-btn admin-btn-primary">Detay</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12343</td>
+                            <td>Mehmet Kaya</td>
+                            <td>₺2,100</td>
+                            <td><span class="status-badge status-active">Tamamlandı</span></td>
+                            <td>2024-03-14</td>
+                            <td>
+                                <button class="admin-btn admin-btn-primary">Detay</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.querySelector('.admin-menu').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.admin-sidebar');
+                sidebar.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+</html> 

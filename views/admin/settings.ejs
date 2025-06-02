@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar - Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h1>Admin Panel</h1>
+            </div>
+            <ul class="admin-menu">
+                <li>
+                    <a href="/admin">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/products">
+                        <i class="fas fa-box"></i>
+                        Ürünler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        Siparişler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/users">
+                        <i class="fas fa-users"></i>
+                        Kullanıcılar
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/categories">
+                        <i class="fas fa-tags"></i>
+                        Kategoriler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/settings" class="active">
+                        <i class="fas fa-cog"></i>
+                        Ayarlar
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h2>Site Ayarları</h2>
+            </div>
+
+            <!-- Settings Form -->
+            <div class="admin-form" style="max-width: 800px; margin: 2rem auto;">
+                <!-- General Settings -->
+                <div class="admin-card" style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Genel Ayarlar</h3>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label for="siteName">Site Adı</label>
+                            <input type="text" class="form-control" id="siteName" value="E-Ticaret Mağazası">
+                        </div>
+                        <div class="form-group">
+                            <label for="siteDescription">Site Açıklaması</label>
+                            <textarea class="form-control" id="siteDescription" rows="3">Modern ve güvenilir alışveriş deneyimi sunan e-ticaret platformu.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="siteLogo">Site Logo</label>
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <img src="/images/logo.png" alt="Logo" style="width: 100px; height: 100px; object-fit: contain; border: 1px solid var(--admin-border); border-radius: 5px;">
+                                <button class="admin-btn">Logo Değiştir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Settings -->
+                <div class="admin-card" style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">İletişim Bilgileri</h3>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label for="email">E-posta Adresi</label>
+                            <input type="email" class="form-control" id="email" value="info@eticaret.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" class="form-control" id="phone" value="+90 555 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adres</label>
+                            <textarea class="form-control" id="address" rows="3">Örnek Mahallesi, Örnek Sokak No:1, 34000 İstanbul</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Settings -->
+                <div class="admin-card" style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Sosyal Medya</h3>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label for="facebook">Facebook</label>
+                            <input type="url" class="form-control" id="facebook" value="https://facebook.com/eticaret">
+                        </div>
+                        <div class="form-group">
+                            <label for="instagram">Instagram</label>
+                            <input type="url" class="form-control" id="instagram" value="https://instagram.com/eticaret">
+                        </div>
+                        <div class="form-group">
+                            <label for="twitter">Twitter</label>
+                            <input type="url" class="form-control" id="twitter" value="https://twitter.com/eticaret">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Settings -->
+                <div class="admin-card" style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Ödeme Ayarları</h3>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label for="currency">Para Birimi</label>
+                            <select class="form-control" id="currency">
+                                <option value="TRY" selected>TRY - Türk Lirası</option>
+                                <option value="USD">USD - Amerikan Doları</option>
+                                <option value="EUR">EUR - Euro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethods">Ödeme Yöntemleri</label>
+                            <div style="display: grid; gap: 0.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" checked> Kredi Kartı
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" checked> Havale/EFT
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" checked> Kapıda Ödeme
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div style="display: flex; justify-content: flex-end;">
+                    <button class="admin-btn admin-btn-primary">
+                        <i class="fas fa-save"></i>
+                        Ayarları Kaydet
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.querySelector('.admin-menu').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.admin-sidebar');
+                sidebar.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetim - Shopping</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="cart-container">
+        <div class="cart-content">
+            <h2 class="animate">Sepetim</h2>
+            
+            <% if (cart && cart.items && cart.items.length > 0) { %>
+                <div class="cart-grid">
+                    <!-- Ürün Listesi -->
+                    <div class="cart-items">
+                        <% cart.items.forEach(item => { %>
+                            <div class="cart-item">
+                                <div class="item-image">
+                                    <img src="<%= item.image %>" alt="<%= item.name %>">
+                                </div>
+                                <div class="item-details">
+                                    <h3><%= item.name %></h3>
+                                    <p class="item-code">Ürün Kodu: <%= item.code %></p>
+                                    <div class="item-price">
+                                        <% if(item.oldPrice) { %>
+                                            <span class="old-price">₺<%= item.oldPrice.toFixed(2) %></span>
+                                        <% } %>
+                                        <span class="current-price">₺<%= item.price.toFixed(2) %></span>
+                                    </div>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn" data-item-id="<%= item.id %>" onclick="decreaseQuantity(this)">-</button>
+                                    <input type="number" value="<%= item.quantity %>" min="1" max="<%= item.stock %>"
+                                           data-item-id="<%= item.id %>" onchange="updateQuantity(this)">
+                                    <button class="quantity-btn" data-item-id="<%= item.id %>" onclick="increaseQuantity(this)">+</button>
+                                </div>
+                                <div class="item-total">
+                                    <span>₺<%= (item.price * item.quantity).toFixed(2) %></span>
+                                </div>
+                                <button class="remove-item" data-item-id="<%= item.id %>" onclick="removeItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        <% }); %>
+                    </div>
+
+                    <!-- Sipariş Özeti -->
+                    <div class="order-summary">
+                        <h1 class="cart-h">Sipariş Özeti</h1>
+                        <div class="summary-item">
+                            <span>Ara Toplam</span>
+                            <span>₺<%= cart.subtotal.toFixed(2) %></span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Kargo</span>
+                            <span>₺<%= cart.shipping.toFixed(2) %></span>
+                        </div>
+                        <% if(cart.discount > 0) { %>
+                            <div class="summary-item discount">
+                                <span>İndirim</span>
+                                <span>-₺<%= cart.discount.toFixed(2) %></span>
+                            </div>
+                        <% } %>
+                        <div class="summary-item total">
+                            <span>Toplam</span>
+                            <span>₺<%= cart.total.toFixed(2) %></span>
+                        </div>
+                        <button class="checkout-btn">Ödemeye Geç</button>
+                        <div class="continue-shopping">
+                            <a href="/"><i class="fas fa-arrow-left"></i> Alışverişe Devam Et</a>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h2>Sepetiniz Boş</h2>
+                    <p>Sepetinizde henüz ürün bulunmuyor.</p>
+                    <a href="/" class="continue-shopping-btn">Alışverişe Başla</a>
+                </div>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    <script src="/js/script.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html> 

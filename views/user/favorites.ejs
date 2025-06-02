@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beğendiklerim - Shopping</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom Global CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="/css/user/favorites.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+
+    <div class="user-page-container favorites-container">
+        <h2 class="user-page-title">Beğendiklerim</h2>
+        
+        <div class="favorites-grid">
+            <!-- Beğenilen ürünler buraya gelecek -->
+            <div class="favorite-item">
+                <div class="user-card favorite-card">
+                    <img src="/images/product-placeholder.jpg" class="favorite-image" alt="Ürün">
+                    <div class="favorite-content">
+                        <h5 class="favorite-title">Ürün Adı</h5>
+                        <p class="product-description">Kısa Açıklama</p>
+                        <p class="favorite-price"><strong>Fiyat: </strong>₺0.00</p>
+                        <div class="favorite-actions">
+                            <button class="btn btn-primary btn-sm add-to-cart">Sepete Ekle</button>
+                            <button class="btn btn-danger btn-sm remove-favorite">Kaldır</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="favorite-item">
+                <div class="user-card favorite-card">
+                    <img src="/images/product-placeholder.jpg" class="favorite-image" alt="Ürün">
+                    <div class="favorite-content">
+                        <h5 class="favorite-title">Başka Ürün Adı</h5>
+                        <p class="product-description">Kısa Açıklama 2</p>
+                        <p class="favorite-price"><strong>Fiyat: </strong>₺0.00</p>
+                        <div class="favorite-actions">
+                            <button class="btn btn-primary btn-sm add-to-cart">Sepete Ekle</button>
+                            <button class="btn btn-danger btn-sm remove-favorite">Kaldır</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eğer beğenilen ürün yoksa aşağıdaki satır gösterilir -->
+            <!--
+            <div class="empty-favorites">
+                <p>Henüz beğendiğiniz ürün bulunmamaktadır.</p>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

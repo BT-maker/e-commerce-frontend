@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İade ve Değişim - Shopping</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container">
+        <div class="return-exchange-content">
+            <h1>İade ve Değişim Koşulları</h1>
+            
+            <section class="return-policy">
+                <h2>İade Koşulları</h2>
+                <div class="policy-content">
+                    <p>Satın aldığınız ürünleri, teslim aldığınız tarihten itibaren 14 gün içinde herhangi bir sebep belirtmeden iade edebilirsiniz.</p>
+                    <ul>
+                        <li>Ürün orijinal ambalajında ve kullanılmamış olmalıdır</li>
+                        <li>Ürünün tüm parçaları ve aksesuarları eksiksiz olmalıdır</li>
+                        <li>Fatura aslı ile birlikte iade edilmelidir</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="exchange-policy">
+                <h2>Değişim Koşulları</h2>
+                <div class="policy-content">
+                    <p>Ürün değişimi için aşağıdaki koşulların sağlanması gerekmektedir:</p>
+                    <ul>
+                        <li>Değişim talebi, ürün tesliminden itibaren 14 gün içinde yapılmalıdır</li>
+                        <li>Ürün kullanılmamış ve orijinal ambalajında olmalıdır</li>
+                        <li>Değişim için ürünün faturası gereklidir</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="return-process">
+                <h2>İade/Değişim Süreci</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <i class="fas fa-box"></i>
+                        <h3>1. Paketleme</h3>
+                        <p>Ürünü orijinal ambalajında paketleyin</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-truck"></i>
+                        <h3>2. Kargo</h3>
+                        <p>Ürünü en yakın kargo şubesine teslim edin</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>3. Onay</h3>
+                        <p>İade/değişim işleminiz onaylandıktan sonra işlem tamamlanır</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-info">
+                <h2>İade/Değişim İletişim</h2>
+                <p>İade ve değişim işlemleri hakkında sorularınız için bize ulaşabilirsiniz:</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-phone"></i> 0850 123 45 67</p>
+                    <p><i class="fas fa-envelope"></i> iade@shopping.com</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    <script src="/js/script.js"></script>
+</body>
+</html> 

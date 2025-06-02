@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Shopping</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h1>Kayıt Ol</h1>
+            <form class="auth-form" action="/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Ad Soyad</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" required placeholder="Adınız ve soyadınız">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required placeholder="E-posta adresiniz">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required placeholder="Şifreniz">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="passwordConfirm">Şifre Tekrar</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" required placeholder="Şifrenizi tekrar girin">
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="terms">
+                        <input type="checkbox" name="terms" required>
+                        <span>Kullanım koşullarını ve gizlilik politikasını kabul ediyorum</span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Kayıt Ol</button>
+            </form>
+            <div class="auth-divider">
+                <span>veya</span>
+            </div>
+            <div class="social-login">
+                <button class="social-button google">
+                    <i class="fab fa-google"></i>
+                    Google ile Kayıt Ol
+                </button>
+                <button class="social-button facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook ile Kayıt Ol
+                </button>
+            </div>
+            <p class="auth-redirect">
+                Zaten hesabınız var mı? <a href="/login">Giriş Yap</a>
+            </p>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    <script src="/js/script.js"></script>
+</body>
+</html> 

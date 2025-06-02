@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipariş Takibi - Shopping</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/order-tracking.css"> <!-- Link to the new CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="order-tracking-container">
+        <div class="order-tracking-content">
+            <h1>Sipariş Takibi</h1>
+
+            <div class="tracking-form">
+                <p>Sipariş durumunuzu öğrenmek için sipariş numaranızı girin.</p>
+                <form id="trackOrderForm">
+                    <input type="text" id="trackingNumber" placeholder="Sipariş Numarası" required>
+                    <button type="submit" class="cta-button">Takip Et</button>
+                </form>
+            </div>
+
+            <div class="tracking-results" id="trackingResults" style="display: none;">
+                <!-- Sipariş takip sonuçları buraya gelecek -->
+                <h2>Sipariş Detayları</h2>
+                <p><strong>Sipariş Numarası:</strong> <span id="resultOrderNumber"></span></p>
+                <p><strong>Durum:</strong> <span id="resultOrderStatus"></span></p>
+                <!-- Daha fazla detay eklenebilir -->
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <p>Sipariş bulunamadı veya takip numarası hatalı.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        // JavaScript will be added here later for form submission and displaying results
+        // For now, it's a placeholder
+        const trackOrderForm = document.getElementById('trackOrderForm');
+        const trackingNumberInput = document.getElementById('trackingNumber');
+        const trackingResultsDiv = document.getElementById('trackingResults');
+        const errorMessageDiv = document.getElementById('errorMessage');
+        const resultOrderNumberSpan = document.getElementById('resultOrderNumber');
+        const resultOrderStatusSpan = document.getElementById('resultOrderStatus');
+
+        trackOrderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const trackingNumber = trackingNumberInput.value.trim();
+            // Here you would typically make an API call to get order status
+            console.log('Tracking Order:', trackingNumber);
+
+            // Simulate a tracking result (replace with actual API call)
+            if (trackingNumber === '12345') {
+                trackingResultsDiv.style.display = 'block';
+                errorMessageDiv.style.display = 'none';
+                resultOrderNumberSpan.textContent = trackingNumber;
+                resultOrderStatusSpan.textContent = 'Kargoda';
+            } else {
+                trackingResultsDiv.style.display = 'none';
+                errorMessageDiv.style.display = 'block';
+            }
+        });
+    </script>
+    <script src="/js/script.js"></script>
+</body>
+</html> 

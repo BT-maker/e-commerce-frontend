@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Yönetimi - Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h1>Admin Panel</h1>
+            </div>
+            <ul class="admin-menu">
+                <li>
+                    <a href="/admin">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/products">
+                        <i class="fas fa-box"></i>
+                        Ürünler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        Siparişler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/users">
+                        <i class="fas fa-users"></i>
+                        Kullanıcılar
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/categories" class="active">
+                        <i class="fas fa-tags"></i>
+                        Kategoriler
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/settings">
+                        <i class="fas fa-cog"></i>
+                        Ayarlar
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h2>Kategori Yönetimi</h2>
+                <button class="admin-btn admin-btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Yeni Kategori Ekle
+                </button>
+            </div>
+
+            <!-- Categories Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <!-- Electronics Category -->
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">Elektronik</h3>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="admin-btn admin-btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="admin-btn admin-btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="color: var(--admin-text-light); margin-bottom: 1rem;">
+                        <i class="fas fa-box"></i> 150 Ürün
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Telefonlar</span>
+                            <span style="color: var(--admin-text-light);">45 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Bilgisayarlar</span>
+                            <span style="color: var(--admin-text-light);">35 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Tabletler</span>
+                            <span style="color: var(--admin-text-light);">25 Ürün</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fashion Category -->
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">Moda</h3>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="admin-btn admin-btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="admin-btn admin-btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="color: var(--admin-text-light); margin-bottom: 1rem;">
+                        <i class="fas fa-box"></i> 200 Ürün
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Erkek Giyim</span>
+                            <span style="color: var(--admin-text-light);">75 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Kadın Giyim</span>
+                            <span style="color: var(--admin-text-light);">85 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Aksesuarlar</span>
+                            <span style="color: var(--admin-text-light);">40 Ürün</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Category -->
+                <div class="admin-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">Ev</h3>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="admin-btn admin-btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="admin-btn admin-btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="color: var(--admin-text-light); margin-bottom: 1rem;">
+                        <i class="fas fa-box"></i> 120 Ürün
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Mobilya</span>
+                            <span style="color: var(--admin-text-light);">45 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Dekorasyon</span>
+                            <span style="color: var(--admin-text-light);">35 Ürün</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--admin-light); border-radius: 5px;">
+                            <span>Mutfak</span>
+                            <span style="color: var(--admin-text-light);">40 Ürün</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.querySelector('.admin-menu').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.admin-sidebar');
+                sidebar.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,69 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/css/header.css" />
+
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/images/mascot2.png" alt="GLAUX Maskot" class="mascot" />
+      <a href="/"><h1>Shopping</h1></a>
+    </div>
+    <div class="search-container">
+      <form class="search-form" action="/search" method="GET">
+        <input
+          type="text"
+          name="q"
+          placeholder="Ürün , kategori veya marka girin"
+          class="search-input"
+        />
+        <button type="submit" class="search-submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+    <div class="nav-icons">
+      <div class="user-container">
+        <a href="#" class="user-link">
+          <i class="fas fa-user"></i>
+          <div class="user-text-container">
+            <div class="login-row">
+              <span class="login-text">Giriş Yap </span>
+              <span class="register-text">veya üye ol</span>
+            </div>
+          </div>
+        </a>
+        <div class="user-menu">
+          <a href="/login" class="user-menu-item">
+            <i class="fas fa-sign-in-alt"></i>
+            Giriş Yap
+          </a>
+          <a href="/register" class="user-menu-item">
+            <i class="fas fa-user-plus"></i>
+            Kayıt Ol
+          </a>
+
+          <hr />
+
+          <a href="/user/orders" class="user-menu-item"> Siparişlerim </a>
+          <a href="/user/profile" class="user-menu-item">
+            Kullanıcı bilgilerim
+          </a>
+          <a href="/user/favorites" class="user-menu-item"> Beğendiklerim </a>
+          <a href="/user/lists" class="user-menu-item"> Tüm listelerim </a>
+          <a href="/user/coupons" class="user-menu-item"> Kuponlarım </a>
+          <a href="/user/support" class="user-menu-item">
+            Soru ve Taleplerim
+          </a>
+        </div>
+      </div>
+      <a href="/cart" class="cart-link">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-text">Sepetim</span>
+      </a>
+    </div>
+  </nav>
+</header>
